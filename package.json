@@ -1,0 +1,58 @@
+{
+  "name": "claude-max-proxy",
+  "version": "1.1.0",
+  "description": "High-performance proxy that turns your Claude Max subscription into a full Anthropic-compatible API",
+  "type": "module",
+  "main": "./src/proxy/server.ts",
+  "bin": {
+    "claude-max-proxy": "./bin/claude-proxy.ts"
+  },
+  "exports": {
+    ".": "./src/proxy/server.ts"
+  },
+  "scripts": {
+    "start": "bun run ./bin/claude-proxy.ts",
+    "proxy": "bun run ./bin/claude-proxy.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "load-test": "bun run tests/load-test.ts",
+    "test:streaming": "bun run tests/test-streaming.ts",
+    "test:tools": "bun run tests/test-tools.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.25",
+    "glob": "^13.0.0",
+    "hono": "^4.11.4"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.21",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.2"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md"
+  ],
+  "keywords": [
+    "claude",
+    "claude-max",
+    "claude-code",
+    "anthropic",
+    "proxy",
+    "claude-agent-sdk",
+    "llm",
+    "ai-coding",
+    "opencode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariklolik/claude-max-proxy.git"
+  },
+  "homepage": "https://github.com/mariklolik/claude-max-proxy#readme",
+  "bugs": {
+    "url": "https://github.com/mariklolik/claude-max-proxy/issues"
+  },
+  "license": "MIT",
+  "private": false
+}
