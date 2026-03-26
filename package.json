@@ -11,7 +11,8 @@
     ".": "./src/proxy/server.ts"
   },
   "scripts": {
-    "start": "bun run ./bin/claude-proxy.ts",
+    "start": "npx tsx start.ts",
+    "start:bun": "bun run ./bin/claude-proxy.ts",
     "proxy": "bun run ./bin/claude-proxy.ts",
     "test": "bun test",
     "typecheck": "tsc --noEmit",
@@ -21,8 +22,11 @@
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.2.25",
+    "@anthropic-ai/sdk": "^0.80.0",
+    "@hono/node-server": "^1.19.11",
     "glob": "^13.0.0",
-    "hono": "^4.11.4"
+    "hono": "^4.11.4",
+    "https-proxy-agent": "^8.0.0"
   },
   "devDependencies": {
     "@types/bun": "^1.2.21",

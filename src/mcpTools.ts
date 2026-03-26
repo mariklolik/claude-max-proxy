@@ -86,7 +86,7 @@ export function createOpencodeMcpServer() {
               isError: true
             }
           }
-          const newContent = content.replace(args.oldString, args.newString)
+          const newContent = content.replaceAll(args.oldString, args.newString)
           await fs.writeFile(filePath, newContent, "utf-8")
           return {
             content: [{ type: "text", text: `Successfully edited ${args.path}` }]
